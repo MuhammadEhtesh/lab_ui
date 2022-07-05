@@ -1,0 +1,20 @@
+export const DATE_FORMATES = {
+    DATE_DISPLAY_FORMAT: "DD/MMM/YYYY",
+    TIME_DISPLAY_FORMAT: "HH:mm:ss",
+    SHORT_TIME_DISPLAY_FORMAT: "HH:mm",
+    DATE: 'DD/MM/YYYY',
+    DATE1: 'MM/DD/YYYY',
+    DATE_DAY: 'DD/MM/YYYY dddd',
+    DAY: 'dddd',
+    DATE_TIME1: 'dd/mm/yyyy hh:mm:ss',
+    DATE_TIME: 'DD/MM/YYYY HH:mm:ss',
+    DATE_TIME2: 'MM/DD/YYYY HH:mm:ss',
+    HOURS: 'HH',
+    TIME: 'hh:mm:ss',
+    TIME1: 'HH:mm:ss',
+    TIME_MORNING: 'hh:mm:ss A',
+    TIME_NIGHT: '',
+    API_DATE_TIME_FORMAT: "YYYY-MM-DD[T]HH:mm:ss",
+    API_DATE_FORMAT: "YYYY-MM-DD",
+    
+}
