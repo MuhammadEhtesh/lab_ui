@@ -51,14 +51,11 @@ export function Login() {
   // }
 
   const handleSubmit = async (e: any) => {
-    const formtarget = e.target
 
-    const formvalues = {
-      email: formtarget.email.value,
-      password: formtarget.password.value,
-    }
+    e.preventDefault();
+    const { email, password } = e.target
 
-    const {data: auth} = await login(formtarget.email.value, formtarget.email.value)
+    const {data: auth} = await login(email?.value, password?.value)
     saveAuth(auth)
   }
 
@@ -113,7 +110,9 @@ export function Login() {
           </div>
         </div>
         <input
+          placeholder='Password'
           type='password'
+          name='password'
           autoComplete='off'
           className={clsx(
             'form-control form-control-lg form-control-solid'
