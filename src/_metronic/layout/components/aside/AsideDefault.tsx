@@ -47,7 +47,7 @@ const AsideDefault: FC = () => {
         {/* end::Logo */}
 
         {/* begin::Aside toggler */}
-        {aside.minimize && (
+        {/* {aside.minimize && (
           <div
             id='kt_aside_toggle'
             className='btn btn-icon w-auto px-0 btn-active-color-primary aside-toggle'
@@ -61,7 +61,7 @@ const AsideDefault: FC = () => {
               className={'svg-icon-1 rotate-180'}
             />
           </div>
-        )}
+        )} */}
         {/* end::Aside toggler */}
       </div>
       {/* end::Brand */}
