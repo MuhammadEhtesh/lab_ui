@@ -1,25 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import {useState} from 'react'
-import * as Yup from 'yup'
 import clsx from 'clsx'
 import {Link} from 'react-router-dom'
-import {useFormik} from 'formik'
 import {getUserByToken, login} from '../core/_requests'
 import {toAbsoluteUrl} from '../../../../_metronic/helpers'
 import {useAuth} from '../core/Auth'
-import {format} from 'path'
-
-// const loginSchema = Yup.object().shape({
-//   email: Yup.string()
-//     .email('Wrong email format')
-//     .min(3, 'Minimum 3 symbols')
-//     .max(50, 'Maximum 50 symbols')
-//     .required('Email is required'),
-//   password: Yup.string()
-//     .min(3, 'Minimum 3 symbols')
-//     .max(50, 'Maximum 50 symbols')
-//     .required('Password is required'),
-// })
 
 export function Login() {
   const [loading, setLoading] = useState(false)
@@ -31,9 +16,9 @@ export function Login() {
   //   onSubmit: async (values, {setStatus, setSubmitting}) => {
   //     setLoading(true)
   //     try {
-  //       const {data: auth} = await login(values.email, values.password)
-  //       console.log(auth)
-  //       saveAuth(auth)
+        // const {data: auth} = await login(values.email, values.password)
+        // console.log(auth)
+        // saveAuth(auth)
   //       // const {data: user} = await getUserByToken(auth.api_token)
   //       //setCurrentUser(user)
   //     } catch (error) {
@@ -46,18 +31,18 @@ export function Login() {
   //   },
   // })
 
-  // const handleLogin = (account: any) => {
-  //   console.log('Account info', account)
-  // }
-
   const handleSubmit = async (e: any) => {
 
     e.preventDefault();
     const { email, password } = e.target
 
-    const {data: auth} = await login(email?.value, password?.value)
+    const {data: auth} = await login(email?.value, password?.value);
+    console.log(auth);
     saveAuth(auth)
-  }
+
+    
+    setCurrentUser(auth.User)
+  } 
 
   return (
     <form className='form w-100' onSubmit={handleSubmit}>
