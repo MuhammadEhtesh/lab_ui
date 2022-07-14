@@ -7,66 +7,63 @@ import {useFormik} from 'formik'
 import {getUserByToken, login} from '../core/_requests'
 import {toAbsoluteUrl} from '../../../../_metronic/helpers'
 import {useAuth} from '../core/Auth'
-import {PublicClientApplication} from "@azure/msal-browser";
-import { msalConfig } from '../../../Utilities/authConfig'
+import {format} from 'path'
 
-const loginSchema = Yup.object().shape({
-  email: Yup.string()
-    .email('Wrong email format')
-    .min(3, 'Minimum 3 symbols')
-    .max(50, 'Maximum 50 symbols')
-    .required('Email is required'),
-  password: Yup.string()
-    .min(3, 'Minimum 3 symbols')
-    .max(50, 'Maximum 50 symbols')
-    .required('Password is required'),
-})
-
-const initialValues = {
-  email: 'admin@demo.com',
-  password: 'demo',
-}
+// const loginSchema = Yup.object().shape({
+//   email: Yup.string()
+//     .email('Wrong email format')
+//     .min(3, 'Minimum 3 symbols')
+//     .max(50, 'Maximum 50 symbols')
+//     .required('Email is required'),
+//   password: Yup.string()
+//     .min(3, 'Minimum 3 symbols')
+//     .max(50, 'Maximum 50 symbols')
+//     .required('Password is required'),
+// })
 
 export function Login() {
   const [loading, setLoading] = useState(false)
   const {saveAuth, setCurrentUser} = useAuth()
 
-  const formik = useFormik({
-    initialValues,
-    validationSchema: loginSchema,
-    onSubmit: async (values, {setStatus, setSubmitting}) => {
-      const login = new PublicClientApplication(msalConfig);
+  // const formik = useFormik({
+  //   initialValues,
+  //   validationSchema: loginSchema,
+  //   onSubmit: async (values, {setStatus, setSubmitting}) => {
+  //     setLoading(true)
+  //     try {
+  //       const {data: auth} = await login(values.email, values.password)
+  //       console.log(auth)
+  //       saveAuth(auth)
+  //       // const {data: user} = await getUserByToken(auth.api_token)
+  //       //setCurrentUser(user)
+  //     } catch (error) {
+  //       console.error(error)
+  //       saveAuth(undefined)
+  //       setStatus('The login detail is incorrect')
+  //       setSubmitting(false)
+  //       setLoading(false)
+  //     }
+  //   },
+  // })
 
-      
-      login.loginRedirect();
-      
-      // setLoading(true)
-      // try {
-      //   const {data: auth} = await login(values.email, values.password)
-      //   saveAuth(auth)
-      //   const {data: user} = await getUserByToken(auth.api_token)
-      //   setCurrentUser(user)
-      // } catch (error) {
-      //   console.error(error)
-      //   saveAuth(undefined)
-      //   setStatus('The login detail is incorrect')
-      //   setSubmitting(false)
-      //   setLoading(false)
-      // }
-    },
-  })
+  // const handleLogin = (account: any) => {
+  //   console.log('Account info', account)
+  // }
 
-  const handleLogin = (account: any) => {
-    console.log("Account info", account);
+  const handleSubmit = async (e: any) => {
+    const formtarget = e.target
+
+    const formvalues = {
+      email: formtarget.email.value,
+      password: formtarget.password.value,
+    }
+
+    const {data: auth} = await login(formtarget.email.value, formtarget.email.value)
+    saveAuth(auth)
   }
 
   return (
-    <form
-      className='form w-100'
-      onSubmit={formik.handleSubmit}
-      noValidate
-      id='kt_login_signin_form'
-    >
+    <form className='form w-100' onSubmit={handleSubmit}>
       {/* begin::Heading */}
       <div className='text-center mb-10'>
         <h1 className='text-dark mb-3'>Sign In to Multi</h1>
@@ -84,23 +81,16 @@ export function Login() {
         <label className='form-label fs-6 fw-bolder text-dark'>Email</label>
         <input
           placeholder='Email'
-          {...formik.getFieldProps('email')}
-          className={clsx(
-            'form-control form-control-lg form-control-solid',
-            {'is-invalid': formik.touched.email && formik.errors.email},
-            {
-              'is-valid': formik.touched.email && !formik.errors.email,
-            }
-          )}
+          className={clsx('form-control form-control-lg form-control-solid')}
           type='email'
           name='email'
           autoComplete='off'
         />
-        {formik.touched.email && formik.errors.email && (
+        {/* {formik.touched.email && formik.errors.email && (
           <div className='fv-plugins-message-container'>
             <span role='alert'>{formik.errors.email}</span>
           </div>
-        )}
+        )} */}
       </div>
       {/* end::Form group */}
 
@@ -113,7 +103,7 @@ export function Login() {
             {/* end::Label */}
             {/* begin::Link */}
             <Link
-              to='/auth/forgot-password'
+              to='/auth/forgotpassword'
               className='link-primary fs-6 fw-bolder'
               style={{marginLeft: '5px'}}
             >
@@ -125,35 +115,29 @@ export function Login() {
         <input
           type='password'
           autoComplete='off'
-          {...formik.getFieldProps('password')}
           className={clsx(
-            'form-control form-control-lg form-control-solid',
-            {
-              'is-invalid': formik.touched.password && formik.errors.password,
-            },
-            {
-              'is-valid': formik.touched.password && !formik.errors.password,
-            }
+            'form-control form-control-lg form-control-solid'
+            // {
+            //   'is-invalid': formik.touched.password && formik.errors.password,
+            // },
+            // {
+            //   'is-valid': formik.touched.password && !formik.errors.password,
+            // }
           )}
         />
-        {formik.touched.password && formik.errors.password && (
+        {/* {formik.touched.password && formik.errors.password && (
           <div className='fv-plugins-message-container'>
             <div className='fv-help-block'>
               <span role='alert'>{formik.errors.password}</span>
             </div>
           </div>
-        )}
+        )} */}
       </div>
       {/* end::Form group */}
 
       {/* begin::Action */}
       <div className='text-center'>
-        <button
-          type='submit'
-          id='kt_sign_in_submit'
-          className='btn btn-lg btn-primary w-100 mb-5'
-          disabled={formik.isSubmitting || !formik.isValid}
-        >
+        <button type='submit' className='btn btn-lg btn-primary w-100 mb-5'>
           {!loading && <span className='indicator-label'>Continue</span>}
           {loading && (
             <span className='indicator-progress' style={{display: 'block'}}>
