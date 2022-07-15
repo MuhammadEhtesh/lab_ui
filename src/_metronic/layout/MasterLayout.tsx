@@ -2,6 +2,7 @@ import {useEffect} from 'react'
 import {Outlet} from 'react-router-dom'
 import {AsideDefault} from './components/aside/AsideDefault'
 import {HeaderWrapper} from './components/header/HeaderWrapper'
+import {HeaderSecondWrapper} from './components/header/HeaderSecondWrapper'
 import {Toolbar} from './components/toolbar/Toolbar'
 import {ScrollTop} from './components/ScrollTop'
 import {Content} from './components/Content'
@@ -49,7 +50,7 @@ const MasterLayout = () => {
       <UpgradePlan />
       <ScrollTop /> */}
       <HeaderWrapper />
-      <h1>Hello</h1>
+      <HeaderSecondWrapper />
     </PageDataProvider>
   )
 }

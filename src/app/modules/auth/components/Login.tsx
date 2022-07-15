@@ -16,9 +16,9 @@ export function Login() {
   //   onSubmit: async (values, {setStatus, setSubmitting}) => {
   //     setLoading(true)
   //     try {
-        // const {data: auth} = await login(values.email, values.password)
-        // console.log(auth)
-        // saveAuth(auth)
+  // const {data: auth} = await login(values.email, values.password)
+  // console.log(auth)
+  // saveAuth(auth)
   //       // const {data: user} = await getUserByToken(auth.api_token)
   //       //setCurrentUser(user)
   //     } catch (error) {
@@ -32,23 +32,21 @@ export function Login() {
   // })
 
   const handleSubmit = async (e: any) => {
+    e.preventDefault()
+    const {email, password} = e.target
 
-    e.preventDefault();
-    const { email, password } = e.target
-
-    const {data: auth} = await login(email?.value, password?.value);
-    console.log(auth);
+    const {data: auth} = await login(email?.value, password?.value)
+    console.log(auth)
     saveAuth(auth)
 
-    
     setCurrentUser(auth.User)
-  } 
+  }
 
   return (
     <form className='form w-100' onSubmit={handleSubmit}>
       {/* begin::Heading */}
       <div className='text-center mb-10'>
-        <h1 className='text-dark mb-3'>Sign In to Multi</h1>
+        <h1 className='text-dark mb-3'>Sign In to Digilatics</h1>
         <div className='text-gray-400 fw-bold fs-4'>
           New Here?{' '}
           <Link to='/auth/registration' className='link-primary fw-bolder'>
