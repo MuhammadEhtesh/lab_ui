@@ -5,6 +5,8 @@ import {HeaderWrapper} from './components/header/HeaderWrapper'
 import {HeaderSecondWrapper} from './components/header/HeaderSecondWrapper'
 import {Carousal} from './components/body/Carousal'
 import {Cards} from './components/body/Cards'
+import {Video} from './components/body/Video'
+import {Promo} from './components/body/Promo'
 import {Toolbar} from './components/toolbar/Toolbar'
 import {ScrollTop} from './components/ScrollTop'
 import {Content} from './components/Content'
@@ -55,6 +57,8 @@ const MasterLayout = () => {
       <HeaderSecondWrapper />
       <Carousal />
       <Cards />
+      <Video />
+      <Promo />
     </PageDataProvider>
   )
 }

@@ -3,7 +3,7 @@ import './css/Cards.scss'
 
 export function Cards() {
   return (
-    <div className='container-fluid d-flex justify-content-center'>
+    <div className='container-fluid d-flex justify-content-center mt-4'>
       <div className='row'>
         <div className='col-md-4'>
           <Card>
