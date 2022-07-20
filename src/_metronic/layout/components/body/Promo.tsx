@@ -15,7 +15,7 @@ export const Promo = () => {
                 Download Our Mobile App Today!
               </h2>
               <p className='lead'>
-                AEML Mobile Lab makes your job easier by providing 24/7 access to your laboratory
+                Digilatics Lab makes your job easier by providing 24/7 access to your laboratory
                 needs and puts convenience in your pocket!
               </p>
               <div id='btnmarg'>

@@ -8,7 +8,7 @@ export function Cards() {
         <div className='col-md-4'>
           <Card>
             <Card.Body>
-              <Card.Title className='text-center'>Why Choose AEML, Inc.?</Card.Title>
+              <Card.Title className='text-center'>Why Choose Digilatics, Inc.?</Card.Title>
               <Card.Text>
                 <ul>
                   <li>
@@ -104,7 +104,7 @@ export function Cards() {
           <Card>
             <Card.Body>
               <Card.Title className='text-center'>
-                AEML LIMS: 24/7 access to your personal account anywhere.
+                Digilatics LIMS: 24/7 access to your personal account anywhere.
               </Card.Title>
               <Card.Text>
                 <ul>
@@ -136,7 +136,7 @@ export function Cards() {
                     <span>
                       <i className='fa fa-arrow-right'></i>
                     </span>
-                    Tour the AEML LIMS System
+                    Tour the Digilatics LIMS System
                     <span>
                       <strong>HERE</strong>
                     </span>
