@@ -8,6 +8,7 @@ import {Cards} from './components/body/Cards'
 import {Video} from './components/body/Video'
 import {Promo} from './components/body/Promo'
 import {FooterComponent} from './components/body/FooterComponent'
+import {FooterCopyRight} from './components/body/FooterCopyRight'
 import {Toolbar} from './components/toolbar/Toolbar'
 import {ScrollTop} from './components/ScrollTop'
 import {Content} from './components/Content'
@@ -61,6 +62,7 @@ const MasterLayout = () => {
       <Video />
       <Promo />
       <FooterComponent />
+      <FooterCopyRight />
     </PageDataProvider>
   )
 }

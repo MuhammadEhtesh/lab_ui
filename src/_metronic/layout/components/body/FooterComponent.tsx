@@ -78,23 +78,6 @@ export const FooterComponent = () => {
             </Box>
           </Grid>
         </Grid>
-        <Box pt={{xs: 2}}>
-          Copyrights © 2022. All rights reserved by
-          <Link href='/' color='inherit' m={0.5} pt={1} style={{textDecoration: 'none'}}>
-            Digilatics, Inc.
-          </Link>
-          <Link href='/' color='inherit' m={0.5} pt={1} style={{textDecoration: 'none'}}>
-            Privacy Policy
-          </Link>{' '}
-          |
-          <Link href='/' color='inherit' m={0.5} pt={1} style={{textDecoration: 'none'}}>
-            Disclaimer
-          </Link>
-          |
-          <Link href='/' color='inherit' m={0.5} pt={1} style={{textDecoration: 'none'}}>
-            Terms & Conditions
-          </Link>
-        </Box>
       </Container>
     </Box>
   )
