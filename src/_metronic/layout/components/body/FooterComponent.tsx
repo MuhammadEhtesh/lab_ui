@@ -1,11 +1,13 @@
 import {Container, Grid, Box, Link, Button} from '@mui/material'
 import './css/FooterComponent.scss'
-import appstore from './img/app-store-badge.svg'
-import googleplay from './img/google-play-badge.svg'
+import appstore from './img/app1.jpeg'
+import googleplay from './img/app2.jpeg'
+import accredited from './img/logo33.jpeg'
+import license from './img/logo22.jpeg'
 
 export const FooterComponent = () => {
   return (
-    <Box px={{xs: 3, sm: 10}} py={{xs: 3, sm: 10}}>
+    <Box px={{xs: 3, sm: 5}} py={{xs: 3, sm: 5}}>
       <Container maxWidth='lg'>
         <Grid container spacing={5}>
           <Grid item xs={12} sm={3}>
@@ -55,33 +57,24 @@ export const FooterComponent = () => {
               <h4>App Info</h4>
             </Box>
             <Box>
-              <Button style={{marginRight: '0.5rem'}}>
-                <img src={appstore} alt='example' width='100' height='100' id='btnimg' />
+              <Button style={{backgroundColor: 'white'}}>
+                <img src={appstore} alt='example' />
               </Button>
             </Box>
             <Box>
-              <Button style={{marginRight: '0.5rem'}}>
-                <img src={googleplay} alt='example1' width='100' height='100' />
+              <Button style={{backgroundColor: 'white'}}>
+                <img src={googleplay} alt='example1' />
               </Button>
             </Box>
           </Grid>
           <Grid item xs={12} sm={3}>
             <Box>
-              <h4>App Info</h4>
+              <h4>ACCREDITATION</h4>
             </Box>
             <Box>
-              <Button>
-                <span>Download from</span>
-                <br></br>
-                <h5>App Store</h5>
-              </Button>
-            </Box>
-            <Box>
-              <Button>
-                <span>Download from</span>
-                <br></br>
-                <h5>App Store</h5>
-              </Button>
+              <Link href='/' color='inherit'>
+                <img src={accredited} alt='accred' />
+              </Link>
             </Box>
           </Grid>
         </Grid>
