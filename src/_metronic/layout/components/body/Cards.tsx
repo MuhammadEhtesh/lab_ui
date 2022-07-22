@@ -6,7 +6,7 @@ export function Cards() {
     <div className='container-fluid d-flex justify-content-center mt-4'>
       <div className='row'>
         <div className='col-md-4'>
-          <Card>
+          <Card className='card h-100'>
             <Card.Body>
               <Card.Title className='text-center'>Why Choose Digilatics, Inc.?</Card.Title>
               <Card.Text>
@@ -58,7 +58,7 @@ export function Cards() {
           </Card>
         </div>
         <div className='col-md-4'>
-          <Card>
+          <Card className='card h-100'>
             <Card.Body>
               <Card.Title className='text-center'>
                 Accredited Laboratory founded by Scientists with Decades of Lab Testing Experience.
@@ -101,7 +101,7 @@ export function Cards() {
           </Card>
         </div>
         <div className='col-md-4'>
-          <Card>
+          <Card className='card h-100'>
             <Card.Body>
               <Card.Title className='text-center'>
                 Digilatics LIMS: 24/7 access to your personal account anywhere.
