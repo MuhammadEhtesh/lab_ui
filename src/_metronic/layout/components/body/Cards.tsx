@@ -1,12 +1,14 @@
 import Card from 'react-bootstrap/Card'
 import './css/Cards.scss'
+import accredited from './img/logo33.jpeg'
+import license from './img/logo22.jpeg'
 
 export function Cards() {
   return (
     <div className='container-fluid d-flex justify-content-center mt-4'>
       <div className='row'>
         <div className='col-md-4'>
-          <Card className='card h-100'>
+          <Card className='card h-100 shadow-lg custom-radius'>
             <Card.Body>
               <Card.Title className='text-center'>Why Choose Digilatics, Inc.?</Card.Title>
               <Card.Text>
@@ -58,7 +60,7 @@ export function Cards() {
           </Card>
         </div>
         <div className='col-md-4'>
-          <Card className='card h-100'>
+          <Card className='card h-100 shadow-lg custom-radius'>
             <Card.Body>
               <Card.Title className='text-center'>
                 Accredited Laboratory founded by Scientists with Decades of Lab Testing Experience.
@@ -85,15 +87,15 @@ export function Cards() {
                     </span>
                     Texas Department Of State Health Services License Lab #1020
                   </li>
-                  <div id='logoimg'>
-                    <li>
-                      {/* <a href='../Content/doc/2572-01.pdf' target='_blank'>
-                        <img src='../Content/images/logo33.jpg'></img>
-                      </a>
-                      <a href='../Content/doc/Texas License Exp 2024.pdf' target='_blank'>
-                        <img src='../Content/images/logo22.jpg'></img>
-                      </a> */}
-                    </li>
+                  <div>
+                    <div className='text-center'>
+                      <Card.Link href='#'>
+                        <img src={accredited} alt='accred' />
+                      </Card.Link>
+                      <Card.Link href='#'>
+                        <img src={license} alt='accred' />
+                      </Card.Link>
+                    </div>
                   </div>
                 </ul>
               </Card.Text>
@@ -101,7 +103,7 @@ export function Cards() {
           </Card>
         </div>
         <div className='col-md-4'>
-          <Card className='card h-100'>
+          <Card className='card h-100 shadow-lg custom-radius'>
             <Card.Body>
               <Card.Title className='text-center'>
                 Digilatics LIMS: 24/7 access to your personal account anywhere.
